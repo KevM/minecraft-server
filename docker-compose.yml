@@ -10,4 +10,12 @@ services:
       VERSION: "1.16.5"
     volumes:
       # attach the relative directory 'data' to the container's /data path
-      - ./data:/data
+      - dwyce:/data
+
+
+volumes:
+    dwyce:
+      driver: azure_file
+      driver_opts:
+        share_name: minecraft-dwyce-volume
+        storage_account_name: minecraftdwycestorage
